@@ -26,11 +26,13 @@ cd ../
 ```
 
 Устанавливаем Яндекс Браузер:
+
 ```
 xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
 
 Как обновить пакет (при условии что обновлён template в данном репозитории)
+
 ```
 cd void-packages
 cd srcpkgs
@@ -39,13 +41,20 @@ git clone https://github.com/MrAiupov/yandex-browser/
 xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
 
-Либо вы можете сами обновите шаблон template.
+Либо вы можете сами обновите шаблон `template`.
+
 Нужно перейти по адресу https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-stable/
+
 И также перейти по адресу в вашей домашней директории, в которую клонировали void-packages/srcpkgs/yandex-browser, и открыть наш файл `template`
+
 Сверить версию установочного deb файла с сайта, с указанной версией в строке `version` в файле `template`.
+
 И если вышло обновление, скачать данный deb файл с сайта и вычислить хешсумму SHA1 установочного deb файла.
+
 И изменить две строки в файле `template`, это строку version указав новую версию (до первого тире) и обновить строку `checksum` указав новую хэшсумму файла, сохранить.
+
 После этого открыть консоль и ввести, и браузер обновиться до новой версии.
+
 ```
 cd void-packages
 cd srcpkgs
