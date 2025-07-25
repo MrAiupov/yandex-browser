@@ -72,6 +72,7 @@ $ sudo xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
 
 При возникновении вопросов, вы можете их задать в нашем уютном чате по VoidLinux.
+
 https://t.me/voidlinux_ru
 
 Хорошего сёрфинга!
