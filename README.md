@@ -28,6 +28,7 @@ cd ../
 Устанавливаем Яндекс Браузер:
 ```
 xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
+```
 
 Как обновить пакет (при условии что обновлён template в данном репозитории)
 ```
