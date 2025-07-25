@@ -1,22 +1,22 @@
 ## Установка Яндекс Браузера в VoidLinux
 
-### 1. Клонирование void-packages и настройка xbps-src
+### 1. Клонируем void-packages и настройка xbps-src
 
-Клонировать `void-packages` в любую домашнюю директорию и установить окружение для сборки пакетов:
+Клонирование `void-packages` в любую домашнюю директорию и установка окружения для сборки пакетов:
 ```
 $ git clone https://github.com/void-linux/void-packages.git
 $ cd void-packages
 $ ./xbps-src binary-bootstrap
 ```
 
-Чтобы собрать пакет с пометкой "restricted":
+Разрешение сборки пакетов с пометкой "restricted":
 ```
 $ echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
 ```
 
 ### 2. Клонируем наш репозиторий, собираем и устанавливаем пакет yandex-browser
 
-Клонирование репозитория с шаблоном установки `yandex-browser` для xpbs-src
+Клонирование репозитория с шаблоном установки `yandex-browser` для `xpbs-src`
 
 ```
 $ cd srcpkgs
