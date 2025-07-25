@@ -1,4 +1,4 @@
-# Template file for 'yandex-browser' / Файл шаблона для пакета 'yandex-browser'
+# Шаблон файла для установки пакета 'yandex-browser' в VoidLinux
 pkgname=yandex-browser
 version=25.6.1.1039
 revision=1
@@ -30,17 +30,17 @@ do_extract() {
 do_install() {
 	tar xf data.tar.xz -C ${DESTDIR}
 
-	# Install the icons / Установка иконок
+	# Установка иконок Яндекс Браузера
 	for size in 16 24 32 48 64 128 256 512; do
 		# Create the yandex browser xdg directory
 		mkdir -p ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps
 
-		# Copy the yandex browser icon / Копирование иконок браузера
+		# Копирование иконок Яндекс Браузера
 		mv ${DESTDIR}/opt/yandex/browser/product_logo_${size}.png \
 		   ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/yandex-browser.png
 	done
 
-	# Remove the Debian/Ubuntu crontab / Удаление файлов cron для Debian/Ubuntu
+	# Удаление файлов crontab для Debian/Ubuntu
 	rm -rf ${DESTDIR}/etc
 	rm -rf ${DESTDIR}/opt/yandex/browser/cron
 }
