@@ -4,14 +4,14 @@
 
 Склонировать `void-packages` в любую домашнюю директорию и установить окружение для сборки пакетов:
 ```
-git clone https://github.com/void-linux/void-packages.git
-cd void-packages
-./xbps-src binary-bootstrap
+$ git clone https://github.com/void-linux/void-packages.git
+$ cd void-packages
+$ ./xbps-src binary-bootstrap
 ```
 
 Чтобы собрать пакет с пометкой "restricted":
 ```
-echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+$ echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
 ```
 
 ### 2. Клонируем наш репозиторий, собираем и устанавливаем пакет yandex-browser
@@ -19,20 +19,20 @@ echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
 Клонирование репозитория с шаблоном установки yandex-browser для xpbs-src
 
 ```
-cd srcpkgs
-git clone https://github.com/MrAiupov/yandex-browser/
-cd ../
+$ cd srcpkgs
+$ git clone https://github.com/MrAiupov/yandex-browser/
+$ cd ../
 ```
 
 Сборка yandex-browser
 ```
-./xbps-src pkg yandex-browser
+$ ./xbps-src pkg yandex-browser
 ```
 
 Установка yandex-browser
 
 ```
-xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
+$ sudo xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
 
 ### 3. Обновление пакета yandex-browser (при условии что обновлён template в данном репозитории)
@@ -40,11 +40,11 @@ xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 Вводим в консоли данные команды, где ранее был клонирован void-packages
 
 ```
-cd void-packages
-cd srcpkgs
-git clone https://github.com/MrAiupov/yandex-browser/
-./xbps-src pkg yandex-browser
-xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
+$ cd void-packages
+$ cd srcpkgs
+$ git clone https://github.com/MrAiupov/yandex-browser/
+$ ./xbps-src pkg yandex-browser
+$ sudo xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
 ### 4. Ручное обновление пакета yandex-browser
 
@@ -65,10 +65,10 @@ xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 После этого открыть консоль и ввести данные команды, и `yandex-browser` обновится до новой версии.
 
 ```
-cd void-packages
-cd srcpkgs
-./xbps-src pkg yandex-browser
-xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
+$ cd void-packages
+$ cd srcpkgs
+$ ./xbps-src pkg yandex-browser
+$ sudo xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
 
 При возникновении вопросов, вы можете их задать в нашем уютном чате по VoidLinux.
