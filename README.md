@@ -1,5 +1,7 @@
 ### Установка Яндекс Браузера в VoidLinux
 
+# 1. Клонирование void-packages и настройка xbps-src
+
 Склонировать `void-packages` в любую домашнюю директорию и установить окружение для сборки пакетов:
 ```
 git clone https://github.com/void-linux/void-packages.git
@@ -12,25 +14,30 @@ cd void-packages
 echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
 ```
 
-Клонируем репозиторий:
+# 2. Клонируем наш репозиторий, собираем и устанавливаем пакет yandex-browser
+
+Клонирование репозитория с шаблоном установки yandex-browser для xpbs-src
+
 ```
 cd srcpkgs
 git clone https://github.com/MrAiupov/yandex-browser/
 cd ../
 ```
 
-Собираем Яндекс Браузер:
+Сборка yandex-browser
 ```
 ./xbps-src pkg yandex-browser
 ```
 
-Устанавливаем Яндекс Браузер:
+Установка yandex-browser
 
 ```
 xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
 
-Как обновить пакет (при условии что обновлён template в данном репозитории)
+# 3. Обновление пакета yandex-browser (при условии что обновлён template в данном репозитории)
+
+Вводим в консоли данные команды, где ранее был клонирован void-packages
 
 ```
 cd void-packages
@@ -39,12 +46,15 @@ git clone https://github.com/MrAiupov/yandex-browser/
 ./xbps-src pkg yandex-browser
 xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
+# 4. Ручное обновление пакета yandex-browser
 
-Либо вы можете сами обновите шаблон `template`.
+Вы можете сами обновить файл `template`, по которому вы ранее собирали пакет `yandex-browser`.
+
+Для начала нужно удостовериться о наличии обновления пакета `yandex-browser`.
 
 Нужно перейти по адресу https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-stable/
 
-И также открыть нашу старую директорию `void-packages/srcpkgs/yandex-browser`, и открыть наш файл `template`
+И также открыть нашу старую директорию `./void-packages/srcpkgs/yandex-browser`, и открыть наш файл `template`
 
 Сверить версию установочного deb файла с сайта, с указанной версией в строке `version` в файле `template`.
 
@@ -52,7 +62,7 @@ xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 
 И изменить две строки в файле `template`, это строку `version` указав новую версию (до первого тире) и обновить строку `checksum` указав новую хэшсумму файла, и сохранить файл.
 
-После этого открыть консоль и ввести данные команды, и Яндекс Браузер обновится до новой версии.
+После этого открыть консоль и ввести данные команды, и `yandex-browser` обновится до новой версии.
 
 ```
 cd void-packages
@@ -60,3 +70,4 @@ cd srcpkgs
 ./xbps-src pkg yandex-browser
 xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 ```
+Хорошего сёрфинга!
