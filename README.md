@@ -2,7 +2,7 @@
 
 ### 1. Клонирование void-packages и настройка xbps-src
 
-Склонировать `void-packages` в любую домашнюю директорию и установить окружение для сборки пакетов:
+Клонировать `void-packages` в любую домашнюю директорию и установить окружение для сборки пакетов:
 ```
 $ git clone https://github.com/void-linux/void-packages.git
 $ cd void-packages
@@ -16,7 +16,7 @@ $ echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
 
 ### 2. Клонируем наш репозиторий, собираем и устанавливаем пакет yandex-browser
 
-Клонирование репозитория с шаблоном установки yandex-browser для xpbs-src
+Клонирование репозитория с шаблоном установки `yandex-browser` для xpbs-src
 
 ```
 $ cd srcpkgs
@@ -24,12 +24,12 @@ $ git clone https://github.com/MrAiupov/yandex-browser/
 $ cd ../
 ```
 
-Сборка yandex-browser
+Сборка `yandex-browser`
 ```
 $ ./xbps-src pkg yandex-browser
 ```
 
-Установка yandex-browser
+Установка `yandex-browser`
 
 ```
 $ sudo xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
@@ -37,7 +37,7 @@ $ sudo xbps-install -v --repository hostdir/binpkgs/nonfree yandex-browser
 
 ### 3. Обновление пакета yandex-browser (при условии что обновлён template в данном репозитории)
 
-Вводим в консоли данные команды, где ранее был клонирован void-packages
+Вводим в консоли данные команды, где ранее был клонирован `void-packages`
 
 ```
 $ cd void-packages
